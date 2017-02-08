@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>accordion</title>
+		<link rel="stylesheet" type="text/css" href="css/accordion.css"/>
+	</head>
+	<body>
+		<div class="cover">
+			<div class="inner">
+				<div class="switch">
+					<span class="triangle"></span>
+					<span>What is a dog?</span>
+				</div>
+				<div class="removeContent hide">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</div>
+				<div class="switch">
+					<span class="triangle"></span>
+					<span>What kinds of dogs are there?</span>
+				</div>
+				<div class="removeContent hide">There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</div>
+				<div class="switch">
+					<span class="triangle"></span>
+					<span>How do you acquire a dog?</span>
+				</div>
+				<div class=" removeContent hide">Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.
+
+A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			const tits = document.getElementsByClassName("switch");
+			const contents = document.getElementsByClassName("removeContent");
+			const triangles = document.getElementsByClassName("triangle");
+			let choose = true;
+			let textHeight = 0;
+			let num = 0;
+			for(let i = 0;i<tits.length;i++){
+				tits[i].index = i;
+				tits[i].addEventListener("click",function(e){
+					e.stopPropagation();
+					for(let i = 0;i<contents.length;i++){
+						contents[i].classList.add("hide");
+					}
+					for(let i = 0;i<triangles.length;i++){
+						triangles[i].classList.remove("down");
+					}
+					if(choose){
+						contents[this.index].classList.remove("hide");
+						triangles[this.index].classList.add("down");
+						num = this.index;
+						choose = false;
+						textHeight = contents[this.index].clientHeight;
+						contents[this.index].style.height = textHeight+"px";
+						console.log(textHeight);
+					}else{
+						if(num == this.index){
+							contents[this.index].classList.add("hide");
+							triangles[this.index].classList.remove("down");
+							choose = true;
+							contents[this.index].style.height = 0+"px";
+						}else{
+							for(let i = 0;i<contents.length;i++){
+								contents[i].classList.add("hide");
+							}
+							for(let i = 0;i<triangles.length;i++){
+								triangles[i].classList.remove("down");
+							}
+							contents[this.index].classList.remove("hide");
+							triangles[this.index].classList.add("down");
+							num = this.index;
+							choose = false;
+							textHeight = contents[this.index].clientHeight;
+							contents[this.index].style.height = textHeight+"px";
+							console.log(textHeight);
+						}
+					}
+					
+				})
+			}
+		</script>
+	</body>
+</html>
