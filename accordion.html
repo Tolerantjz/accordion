@@ -49,6 +49,7 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 						triangles[this.index].classList.add("down");
 						num = this.index;
 						choose = false;
+						contents[this.index].style.height = "";
 						textHeight = contents[this.index].clientHeight;
 						contents[this.index].style.height = textHeight+"px";
 						console.log(textHeight);
@@ -57,10 +58,11 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 							contents[this.index].classList.add("hide");
 							triangles[this.index].classList.remove("down");
 							choose = true;
-							contents[this.index].style.height = 0+"px";
+							contents[this.index].style.height = '';
 						}else{
 							for(let i = 0;i<contents.length;i++){
 								contents[i].classList.add("hide");
+								contents[i].style.height = "";
 							}
 							for(let i = 0;i<triangles.length;i++){
 								triangles[i].classList.remove("down");
@@ -70,11 +72,10 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 							num = this.index;
 							choose = false;
 							textHeight = contents[this.index].clientHeight;
-							contents[this.index].style.height = textHeight+"px";
+							contents[this.index].style.height = textHeight+'px';
 							console.log(textHeight);
 						}
 					}
-					
 				})
 			}
 		</script>
