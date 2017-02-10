@@ -3,7 +3,7 @@ window.onload = function() {
 	const parents = document.getElementsByClassName("father");
 	const texts = new Array();
 	for(let i = 0; i < contents.length; i++) {
-		texts[i] = parents[i].clientHeight;
+		texts[i] = contents[i].clientHeight;
 		contents[i].style.height = 0 + "px";
 	}
 	const tits = document.getElementsByClassName("switch");
