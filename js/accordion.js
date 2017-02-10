@@ -1,6 +1,5 @@
 window.onload = function() {
 	const contents = document.getElementsByClassName("baseContent");
-	const parents = document.getElementsByClassName("father");
 	const texts = new Array();
 	for(let i = 0; i < contents.length; i++) {
 		texts[i] = contents[i].clientHeight;
