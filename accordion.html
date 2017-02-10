@@ -36,15 +36,13 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 		<script type="text/javascript">
 		window.onload = function(){
 			const contents = document.getElementsByClassName("baseContent");
-			let texts = new Array();
+			const texts = new Array();
 			for(let i = 0;i<contents.length;i++){
 				texts[i] = contents[i].clientHeight;
 				contents[i].style.height = 0+"px";
 			}
-			
 			const tits = document.getElementsByClassName("switch");
 			let choose = true;
-			let textHeight = 0;
 			let num = 0;
 			for(let i = 0;i<tits.length;i++){
 				tits[i].index = i;
@@ -65,9 +63,7 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 						num = this.index;
 						choose = false;
 						contents[this.index].style.height =0+"px";
-						textHeight = contents[this.index].clientHeight;
 						contents[this.index].style.height = texts[this.index]+"px";
-						console.log(textHeight);
 					}else{
 						if(num == this.index){
 							contents[this.index].classList.add("hide");
@@ -77,7 +73,6 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 						}else{
 							for(let i = 0;i<contents.length;i++){
 								contents[i].classList.add("hide");
-								texts[i] = contents[i].clientHeight;
 								contents[i].style.height = 0+"px";
 							}
 							for(let i = 0;i<triangles.length;i++){
@@ -87,17 +82,12 @@ A pet shop may be the most convenient way to buy a dog. Buying a dog from a priv
 							triangles[this.index].classList.add("down");
 							num = this.index;
 							choose = false;
-							textHeight = contents[this.index].clientHeight;
 							contents[this.index].style.height = texts[this.index]+'px';
-							console.log(textHeight);
 						}
 					}
 				})
 			}
-			
-			
 		}
-			
 		</script>
 	</body>
 </html>
