@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+body{color: white;font-family: Arial;overflow: hidden;}
+.cover{margin: 20px;background-color: rgb(27,28,29);width: 50%;border-radius: 5px;height: 20%;}
+.inner{padding: 15px 0px;width: 90%;overflow: hidden;}
+.triangle{width: 0;height: 0;border-top:5px solid transparent;border-right:5px solid transparent;border-left: 5px solid white;border-bottom: 5px solid transparent;display: inline-block;}
+.down{border-top:5px solid white;border-right:5px solid transparent;border-left: 5px solid transparent;border-bottom: 5px solid transparent;}
+.baseContent{opacity: 1;transition: all 0.5s;padding: 10px 10px;overflow-y: hidden;}
+.hide{opacity: 0;transition: all 0.5s;}
+.switch{cursor: pointer;padding: 0px 10px;position: relative;}
+.switch:hover{color: lightgray;}
+.outer{width: 50%;position: absolute;right: -9999px;}
