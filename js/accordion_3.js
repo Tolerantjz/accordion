@@ -1,7 +1,7 @@
 window.onload = function() {
 	const outThings = document.getElementsByClassName("far");
 	const tits = document.getElementsByClassName("switch");
-	const contents = document.getElementsByClassName("baseContent");
+	const contents = document.getElementsByClassName("showContent");
 	const texts = new Array();
 	let choose = true;
 	let num = 0;
@@ -9,11 +9,12 @@ window.onload = function() {
 		texts[i] = outThings[i].clientHeight;
 		contents[i].style.height = 0 + "px";
 	}
+	console.log(texts);
 	for(let i = 0; i < tits.length; i++) {
 		tits[i].index = i;
 		tits[i].addEventListener("click", function(e) {
 			const tits = document.getElementsByClassName("switch");
-			const contents = document.getElementsByClassName("baseContent");
+			const contents = document.getElementsByClassName("showContent");
 			const triangles = document.getElementsByClassName("triangle");
 			const outThings = document.getElementsByClassName("far");
 			e.stopPropagation();
